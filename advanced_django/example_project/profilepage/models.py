@@ -11,11 +11,15 @@ from business.models import Business
 from django.dispatch import receiver 
 from django.db.models.signals import post_save 
 
+
 class ProfilePage(models.Model):
+    """Example of using Generic Foreign Keys"""
     content_type = models.ForeignKey(ContentType, on_delete=CASCADE, null=True)
     object_id = models.PositiveIntegerField(null=True)
     subject = GenericForeignKey('content_type', 'object_id')
 
+
+# Examples how to use signals
 
 @receiver(post_save, sender=UserAccount)
 def create_profile_user(instance, created, **kwargs):
