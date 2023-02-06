@@ -20,6 +20,9 @@ class ProfilePage(models.Model):
 
 
 # Examples how to use signals
+# signals allow certain senders to notify a set of receivers that some action has taken place
+# This signals area used to automatically create a profile for each
+# user or business created
 
 @receiver(post_save, sender=UserAccount)
 def create_profile_user(instance, created, **kwargs):

@@ -39,6 +39,7 @@ class RGBcolorField(models.CharField):
         return int_to_hex(value)
     
     def get_prep_value(self, value):
+        """Database value for the field"""
         return hex_to_int(value)
 
 
@@ -49,7 +50,7 @@ class UserAccount(models.Model):
     created_on = models.DateTimeField('date created', auto_now_add=True)
     birthday = models.DateField()
     location = models.CharField(max_length=200)
-    favorite_color = RGBcolorField(null=True)
+    favorite_color = RGBcolorField(null=True) # custom field
     about = models.TextField(null=True)
     profile_photo = models.ImageField(upload_to='profile_photos', null=True)
 
