@@ -1,3 +1,3 @@
 # miscellaneous
 
-I.T. Topics of my interest.
+I.T. topics of interest.
